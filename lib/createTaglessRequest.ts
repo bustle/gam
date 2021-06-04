@@ -1,9 +1,9 @@
-import { RequestParameters } from "./requestParameters"
+import { TaglessRequestParameters } from "./types/taglessRequestParameters"
 import { createQueryString } from "./utils"
 
 const BASE_URL = "https://securepubads.g.doubleclick.net/gampad/adx"
 
-function createTaglessRequest(parameters: RequestParameters) {
+function createTaglessRequest(parameters: TaglessRequestParameters) {
   return fetch(`${BASE_URL}?${createQueryString(parameters)}`)
 }
 
