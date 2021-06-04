@@ -1,6 +1,7 @@
 {
   "scripts": {
     "build": "npx webpack",
+    "lint": "npx tsc",
     "test": "mocha '{,!(node_modules|dist)/**}/*.test.ts'"
   },
   "devDependencies": {
