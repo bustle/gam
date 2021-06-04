@@ -1,4 +1,5 @@
 import { RequestParameters } from "./request_parameters"
+import { createQueryString } from "./utils"
 
 const BASE_URL = "https://securepubads.g.doubleclick.net/gampad/adx"
 
@@ -25,5 +26,5 @@ function encodeParameters(parameters: RequestParameters): RequestParameters {
 }
 
 export function createTaglessRequest(parameters: RequestParameters) {
-  return fetch(`${BASE_URL}?${encodeParameters(parameters)}`)
+  return fetch(`${BASE_URL}?${createQueryString(encodeParameters(parameters))}`)
 }
