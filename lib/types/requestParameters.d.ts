@@ -8,7 +8,7 @@ export interface RequestParameters {
    *  - /1234/homepage
    *  - /5678/sports/baseball
    */
-  iu: string;
+  iu: string
 
   /**
    * Creative size. To include multiple sizes use the pipe (|) character as a
@@ -18,7 +18,7 @@ export interface RequestParameters {
    *  - 320x50 for a single size
    *  - 320x50|300x50 for multiple sizes
    */
-  sz: string;
+  sz: string
 
   /**
    * Correlator (or, cache-busting) value. This must be a random number
@@ -29,7 +29,7 @@ export interface RequestParameters {
    * Example:
    *  - 8362527364
    */
-  c: number;
+  c: number
 
   /**
    * Position of the tag on a webpage. The value should be a unique integer.
@@ -38,7 +38,7 @@ export interface RequestParameters {
    * This is only required if multiple ad tags use the same ad unit code (iu=)
    * and correlator (c=) values on the same page.
    */
-  tile: number;
+  tile: number
 
   /**
    * Delayed impression toggle. If included, impression counting upon request
@@ -51,7 +51,7 @@ export interface RequestParameters {
    *
    * 0 is the default value for Google Ad Manager impression counting.
    */
-  d_imp?: 0 | 1;
+  d_imp?: 0 | 1
 
   /**
    * Delayed impression header information toggle. If included, the view URL to
@@ -68,7 +68,7 @@ export interface RequestParameters {
    *
    * 0 explicitly disables delayed impression header information.
    */
-  d_imp_hdr?: 0 | 1;
+  d_imp_hdr?: 0 | 1
 
   /**
    * Slot-level key-value pairs.
@@ -78,7 +78,7 @@ export interface RequestParameters {
    *
    * Spaces are allowed in values, but not in keys.
    */
-  t?: Record<string, string | number>;
+  t?: Record<string, string | number>
 
   /**
    * Mime-type value on the HTTP header.
@@ -86,14 +86,14 @@ export interface RequestParameters {
    * Example:
    *  - text/wml
    */
-  m?: string;
+  m?: string
 
   /**
    * Mobile ad request indicator.
    *
    * "js" is the only accepted value
    */
-  mob?: "js";
+  mob?: "js"
 
   /**
    * Mobile device screen width, which overrides the automatic detection done
@@ -102,7 +102,7 @@ export interface RequestParameters {
    * Example:
    *  - 1024
    */
-  u_w?: number;
+  u_w?: number
 
   /**
    * Mobile device screen height, which overrides the automatic detection done
@@ -111,7 +111,7 @@ export interface RequestParameters {
    * Example:
    *  - 768
    */
-  u_h?: number;
+  u_h?: number
 
   /**
    * Mobile device hardware information, which overrides the automatic
@@ -121,5 +121,5 @@ export interface RequestParameters {
    *  - iPhone8,1
    *  - iPad1,1
    */
-  submodel?: string;
+  submodel?: string
 }
