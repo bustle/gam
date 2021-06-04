@@ -1,6 +1,8 @@
 import fetch from "node-fetch"
-export { createTaglessRequest } from "./request"
+import createTaglessRequest from "./createTaglessRequest"
 
 if (!globalThis.fetch) {
   globalThis.fetch = fetch
 }
+
+export { createTaglessRequest }
