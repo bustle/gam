@@ -21,8 +21,8 @@ describe("createTaglessRequest", () => {
   describe("issues a tagless request", () => {
     it("for a single size", async () => {
       const parameters = {
-        sz: "7x7",
         iu: "/1234/mySite",
+        sz: "7x7",
         c: 54633,
         tile: 1,
       }

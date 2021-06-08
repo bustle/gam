@@ -1,4 +1,4 @@
-const path = require("path")
+const path = require('path')
 
 const common = {
   entry: './lib/gam.ts',
@@ -6,11 +6,11 @@ const common = {
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /\.ts$/u,
         loader: 'esbuild-loader',
         options: {
           loader: 'ts',
-          target: 'es2015',
+          target: 'es2015'
         }
       }
     ]

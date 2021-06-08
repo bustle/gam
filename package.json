@@ -1,7 +1,8 @@
 {
   "scripts": {
     "build": "npx webpack",
-    "lint": "npx tsc",
+    "eslint": "eslint --ext .ts,.js --cache --fix .",
+    "lint": "npx tsc && npm run eslint",
     "test": "mocha '{,!(node_modules|dist)/**}/*.test.ts'"
   },
   "devDependencies": {
@@ -9,10 +10,13 @@
     "@types/mocha": "^8.2.2",
     "@types/nock": "^11.1.0",
     "@types/node": "^15.12.0",
+    "@typescript-eslint/eslint-plugin": "^4.26.1",
+    "@typescript-eslint/parser": "^4.26.1",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.3.4",
     "esbuild-loader": "^2.13.1",
+    "eslint": "^7.28.0",
     "mocha": "^8.4.0",
     "nock": "^13.1.0",
     "ts-eager": "^2.0.2",
