@@ -1,7 +1,7 @@
-import path from 'path'
+const path = require("path")
 
 const common = {
-  entry: './lib/gam.ts',
+  entry: "./index.ts",
   mode: 'development',
   module: {
     rules: [
@@ -20,7 +20,7 @@ const common = {
   }
 }
 
-const config = [
+module.exports = () => [
   {
     ...common,
     target: 'node',
@@ -37,4 +37,3 @@ const config = [
   }
 ]
 
-export default config

@@ -9,6 +9,17 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./index.ts":
+/*!******************!*\
+  !*** ./index.ts ***!
+  \******************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createTaglessRequest\": () => (/* reexport safe */ _lib_createTaglessRequest__WEBPACK_IMPORTED_MODULE_1__.default),\n/* harmony export */   \"TaglessRequestParameters\": () => (/* reexport default from dynamic */ _types_taglessRequestParameters__WEBPACK_IMPORTED_MODULE_2___default.a)\n/* harmony export */ });\n/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! node-fetch */ \"./node_modules/node-fetch/browser.js\");\n/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(node_fetch__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _lib_createTaglessRequest__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lib/createTaglessRequest */ \"./lib/createTaglessRequest.ts\");\n/* harmony import */ var _types_taglessRequestParameters__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./types/taglessRequestParameters */ \"./types/taglessRequestParameters.d.ts\");\n/* harmony import */ var _types_taglessRequestParameters__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_types_taglessRequestParameters__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\nif (!globalThis.fetch) {\n  globalThis.fetch = (node_fetch__WEBPACK_IMPORTED_MODULE_0___default());\n}\n\n\n\n//# sourceURL=webpack:///./index.ts?");
+
+/***/ }),
+
 /***/ "./lib/createTaglessRequest.ts":
 /*!*************************************!*\
   !*** ./lib/createTaglessRequest.ts ***!
@@ -20,27 +31,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./lib/gam.ts":
-/*!********************!*\
-  !*** ./lib/gam.ts ***!
-  \********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createTaglessRequest\": () => (/* reexport safe */ _createTaglessRequest__WEBPACK_IMPORTED_MODULE_1__.default),\n/* harmony export */   \"TaglessRequestParameters\": () => (/* reexport default from dynamic */ _types_taglessRequestParameters__WEBPACK_IMPORTED_MODULE_2___default.a)\n/* harmony export */ });\n/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! node-fetch */ \"./node_modules/node-fetch/browser.js\");\n/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(node_fetch__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _createTaglessRequest__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createTaglessRequest */ \"./lib/createTaglessRequest.ts\");\n/* harmony import */ var _types_taglessRequestParameters__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./types/taglessRequestParameters */ \"./lib/types/taglessRequestParameters.d.ts\");\n/* harmony import */ var _types_taglessRequestParameters__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_types_taglessRequestParameters__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\nif (!globalThis.fetch) {\n  globalThis.fetch = (node_fetch__WEBPACK_IMPORTED_MODULE_0___default());\n}\n\n\n\n//# sourceURL=webpack:///./lib/gam.ts?");
-
-/***/ }),
-
-/***/ "./lib/types/taglessRequestParameters.d.ts":
-/*!*************************************************!*\
-  !*** ./lib/types/taglessRequestParameters.d.ts ***!
-  \*************************************************/
-/***/ (() => {
-
-eval("\n\n//# sourceURL=webpack:///./lib/types/taglessRequestParameters.d.ts?");
-
-/***/ }),
-
 /***/ "./lib/utils.ts":
 /*!**********************!*\
   !*** ./lib/utils.ts ***!
@@ -49,6 +39,16 @@ eval("\n\n//# sourceURL=webpack:///./lib/types/taglessRequestParameters.d.ts?");
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createQueryString\": () => (/* binding */ createQueryString)\n/* harmony export */ });\nfunction createQueryString(parameters) {\n  return Object.entries(parameters).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join(\"&\");\n}\n\n\n//# sourceURL=webpack:///./lib/utils.ts?");
+
+/***/ }),
+
+/***/ "./types/taglessRequestParameters.d.ts":
+/*!*********************************************!*\
+  !*** ./types/taglessRequestParameters.d.ts ***!
+  \*********************************************/
+/***/ (() => {
+
+eval("\n\n//# sourceURL=webpack:///./types/taglessRequestParameters.d.ts?");
 
 /***/ }),
 
@@ -135,7 +135,7 @@ eval("\n\n// ref: https://github.com/tc39/proposal-global\nvar getGlobal = funct
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./lib/gam.ts");
+/******/ 	var __webpack_exports__ = __webpack_require__("./index.ts");
 /******/ 	
 /******/ })()
 ;
