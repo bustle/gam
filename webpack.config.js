@@ -1,4 +1,4 @@
-const path = require('path')
+import path from 'path'
 
 const common = {
   entry: './lib/gam.ts',
@@ -16,24 +16,25 @@ const common = {
     ]
   },
   resolve: {
-    extensions: ['.ts']
+    extensions: ['.ts', '.d.ts']
   }
 }
 
-module.exports = () => [
+const config = [
   {
     ...common,
     target: 'node',
     output: {
-      path: path.resolve(__dirname, './dist/node/')
+      path: path.resolve('./dist/node/')
     }
   },
   {
     ...common,
     target: 'web',
     output: {
-      path: path.resolve(__dirname, './dist/web/')
+      path: path.resolve('./dist/web/')
     }
   }
 ]
 
+export default config
