@@ -15,6 +15,13 @@ const common = {
       }
     ]
   },
+  output: {
+    filename: "gam.js",
+    library: "gam",
+    libraryTarget: "umd",
+    globalObject: 'this',
+    umdNamedDefine: true
+  },
   resolve: {
     extensions: ['.ts', '.d.ts']
   }
@@ -25,13 +32,16 @@ module.exports = () => [
     ...common,
     target: 'node',
     output: {
-      path: path.resolve('./dist/node/')
+      ...common.output,
+      path: path.resolve('./dist/node/'),
+
     }
   },
   {
     ...common,
     target: 'web',
     output: {
+      ...common.output,
       path: path.resolve('./dist/web/')
     }
   }
