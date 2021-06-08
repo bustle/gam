@@ -1,7 +1,7 @@
 {
   "scripts": {
     "build": "npx webpack",
-    "eslint": "eslint --ext .ts,.js --cache --fix .",
+    "eslint": "eslint --ext .ts,.js --cache .",
     "lint": "npx tsc && npm run eslint",
     "test": "mocha '{,!(node_modules|dist)/**}/*.test.ts'"
   },
