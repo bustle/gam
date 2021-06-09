@@ -1,7 +1,7 @@
-const path = require("path")
+const path = require('path')
 
 const common = {
-  entry: "./index.ts",
+  entry: './index.ts',
   mode: 'development',
   module: {
     rules: [
@@ -16,9 +16,9 @@ const common = {
     ]
   },
   output: {
-    filename: "gam.js",
-    library: "gam",
-    libraryTarget: "umd",
+    filename: 'gam.js',
+    library: 'gam',
+    libraryTarget: 'umd',
     globalObject: 'this',
     umdNamedDefine: true
   },
