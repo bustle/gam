@@ -1,6 +1,6 @@
 import nock from "nock"
 import { assert } from "chai"
-import { createTaglessRequest } from "./gam"
+import createTaglessRequest from "./createTaglessRequest"
 
 const creative = `
   <script>

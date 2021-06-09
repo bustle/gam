@@ -1,7 +1,7 @@
 const path = require('path')
 
 const common = {
-  entry: './lib/gam.ts',
+  entry: './index.ts',
   mode: 'development',
   module: {
     rules: [
@@ -15,8 +15,15 @@ const common = {
       }
     ]
   },
+  output: {
+    filename: 'gam.js',
+    library: 'gam',
+    libraryTarget: 'umd',
+    globalObject: 'this',
+    umdNamedDefine: true
+  },
   resolve: {
-    extensions: ['.ts']
+    extensions: ['.ts', '.d.ts']
   }
 }
 
@@ -25,14 +32,17 @@ module.exports = () => [
     ...common,
     target: 'node',
     output: {
-      path: path.resolve(__dirname, './dist/node/')
+      ...common.output,
+      path: path.resolve('./dist/node/'),
+
     }
   },
   {
     ...common,
     target: 'web',
     output: {
-      path: path.resolve(__dirname, './dist/web/')
+      ...common.output,
+      path: path.resolve('./dist/web/')
     }
   }
 ]
