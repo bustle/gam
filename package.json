@@ -5,6 +5,7 @@
     "lint": "npx tsc && npm run eslint",
     "test": "mocha '{,!(node_modules|dist)/**}/*.test.ts'"
   },
+  "browser": "dist/web/gam",
   "devDependencies": {
     "@types/chai": "^4.2.18",
     "@types/mocha": "^8.2.2",
@@ -27,5 +28,6 @@
   },
   "dependencies": {
     "node-fetch": "^2.6.1"
-  }
+  },
+  "main": "dist/node/gam"
 }
