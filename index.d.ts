@@ -4,4 +4,4 @@ export { TaglessRequestParameters }
 
 export function createTaglessRequest(
   parameters: TaglessRequestParameters
-): Response
+): Promise<Response>
