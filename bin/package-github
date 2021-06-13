@@ -2,5 +2,5 @@ npm run build
 cp package.json dist/
 cp index.d.ts dist/
 cp -R types dist/
-git subtree split --branch package2 --prefix dist/
-git checkout package2
+git subtree split --branch package --prefix dist/
+git checkout package
