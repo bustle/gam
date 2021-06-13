@@ -1,2 +1,0 @@
-git subtree split --branch package --prefix dist/
-git checkout package
