@@ -3,8 +3,10 @@
     "build": "npx webpack",
     "eslint": "eslint --ext .ts,.js --cache .",
     "lint": "npx tsc && npm run eslint",
+    "package:github": "./bin/package-github",
     "test": "mocha '{,!(node_modules|dist)/**}/*.test.ts'"
   },
+  "browser": "web/gam",
   "devDependencies": {
     "@types/chai": "^4.2.18",
     "@types/mocha": "^8.2.2",
@@ -27,5 +29,7 @@
   },
   "dependencies": {
     "node-fetch": "^2.6.1"
-  }
+  },
+  "main": "node/gam",
+  "types": "./index.d.ts"
 }
