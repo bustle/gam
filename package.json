@@ -6,7 +6,7 @@
     "package:github": "./bin/package-github",
     "test": "mocha '{,!(node_modules|dist)/**}/*.test.ts'"
   },
-  "browser": "web/gam",
+  "browser": "dist/web/gam",
   "devDependencies": {
     "@types/chai": "^4.2.18",
     "@types/mocha": "^8.2.2",
@@ -30,6 +30,6 @@
   "dependencies": {
     "node-fetch": "^2.6.1"
   },
-  "main": "node/gam",
+  "main": "dist/node/gam",
   "types": "./index.d.ts"
 }
