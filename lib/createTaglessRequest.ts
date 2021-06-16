@@ -1,5 +1,5 @@
 import TaglessRequestParameters from "../types/taglessRequestParameters"
-import { createQueryString } from "./utils"
+import createQueryString from "./createQueryString"
 
 const BASE_URL = "https://securepubads.g.doubleclick.net/gampad/adx"
 

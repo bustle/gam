@@ -45,13 +45,11 @@ rules:
   func-call-spacing: error
   func-name-matching: error
   func-names: error
-  function-paren-newline: error
   generator-star-spacing: error
   grouped-accessor-pairs: error
   guard-for-in: error
   id-denylist: error
   id-match: error
-  implicit-arrow-linebreak: error
   jsx-quotes: error
   key-spacing: error
   keyword-spacing: error
@@ -68,7 +66,6 @@ rules:
   max-statements: error
   max-statements-per-line: error
   multiline-comment-style: error
-  multiline-ternary: error
   new-cap: error
   new-parens: error
   newline-per-chained-call: error
@@ -134,7 +131,6 @@ rules:
   no-shadow: error
   no-tabs: error
   no-template-curly-in-string: error
-  no-ternary: error
   no-throw-literal: error
   no-trailing-spaces: error
   no-undef-init: error
@@ -159,7 +155,6 @@ rules:
   no-whitespace-before-property: error
   nonblock-statement-body-position: error
   object-curly-newline: error
-  object-property-newline: error
   object-shorthand: error
   one-var-declaration-per-line: error
   operator-assignment: error
