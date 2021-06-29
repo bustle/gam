@@ -14,4 +14,9 @@ describe("createQueryString", () => {
     const qs = createQueryString({ t: { a: "b", c: "d" } })
     assert.equal(qs, "t=a%3Db%26c%3Dd")
   })
+
+  it("drops undefined fields", () => {
+    const qs = createQueryString({ a: "b", c: undefined })
+    assert.equal(qs, "a=b")
+  })
 })
