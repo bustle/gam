@@ -38,7 +38,7 @@ export default interface TaglessRequestParameters {
    * This is only required if multiple ad tags use the same ad unit code (iu=)
    * and correlator (c=) values on the same page.
    */
-  tile: number
+  tile?: number
 
   /**
    * Delayed impression toggle. If included, impression counting upon request
