@@ -1,4 +1,5 @@
 {
+  "name": "@bustle/gam",
   "scripts": {
     "build": "npx webpack",
     "eslint": "eslint --ext .ts,.js --cache .",
