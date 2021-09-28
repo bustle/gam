@@ -1,5 +1,8 @@
 ## Changelog
 
+### v.0.0.7
+* Don't include the user-agent header at all if no userAgent option is provided
+
 ### v.0.0.6
 * Made userAgent (and all request options) optional. HOWEVER, this does not change the fact that tracked impressions may be marked invalid by Ad Manager in the event that the user-agent for the tagless request does not align with that for the impression pixel.
 
