@@ -1,9 +1,6 @@
 import TaglessRequestParameters from "../types/taglessRequestParameters"
+import RequestOptions from '../types/requestOptions'
 import createQueryString from "./createQueryString"
-
-export interface RequestOptions {
-  userAgent: string
-}
 
 const BASE_URL = "https://securepubads.g.doubleclick.net/gampad/adx"
 
