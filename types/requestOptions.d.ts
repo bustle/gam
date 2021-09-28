@@ -1,5 +1,5 @@
 interface RequestOptions {
-  userAgent: string
+  userAgent?: string
 }
 
 export default RequestOptions

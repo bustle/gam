@@ -5,5 +5,5 @@ export { TaglessRequestParameters }
 
 export function createTaglessRequest(
   parameters: TaglessRequestParameters,
-  options: RequestOptions
+  options?: RequestOptions
 ): Promise<Response>

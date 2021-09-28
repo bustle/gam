@@ -14,7 +14,7 @@ const BASE_URL = "https://securepubads.g.doubleclick.net/gampad/adx"
  *
  * @returns a tagless response
  */
-function createTaglessRequest(parameters: TaglessRequestParameters, options: RequestOptions) {
+function createTaglessRequest(parameters: TaglessRequestParameters, options: RequestOptions = {}) {
   return fetch(`${BASE_URL}?${createQueryString(parameters)}`, {
     headers: {
       'User-Agent': options.userAgent
