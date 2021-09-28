@@ -1,6 +1,7 @@
 import nock from "nock"
 import { assert } from "chai"
-import createTaglessRequest from "./createTaglessRequest"
+import { createTaglessRequest } from "../index"
+import { RequestOptions } from "./createTaglessRequest"
 
 const creative = `
   <script>
@@ -10,9 +11,10 @@ const creative = `
   </script>
 `
 
-function mockSuccess(parameters: Record<string, any>) {
+function mockSuccess(parameters: Record<string, any>, options: RequestOptions) {
   nock("https://securepubads.g.doubleclick.net")
     .get("/gampad/adx")
+    .matchHeader('user-agent', options.userAgent)
     .query(parameters)
     .reply(200, creative)
 }
@@ -27,8 +29,8 @@ describe("createTaglessRequest", () => {
         tile: 1,
       }
 
-      mockSuccess(parameters)
-      const response = await createTaglessRequest(parameters)
+      mockSuccess(parameters, {userAgent: 'myUserAgent'} )
+      const response = await createTaglessRequest(parameters, { userAgent: 'myUserAgent' })
       assert.equal(response.status, 200)
       assert.isOk(await response.text())
     })
