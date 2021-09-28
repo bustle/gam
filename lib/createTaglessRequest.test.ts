@@ -1,7 +1,7 @@
 import nock from "nock"
 import { assert } from "chai"
 import { createTaglessRequest } from "../index"
-import { RequestOptions } from "./createTaglessRequest"
+import RequestOptions from "../types/requestOptions"
 
 const creative = `
   <script>

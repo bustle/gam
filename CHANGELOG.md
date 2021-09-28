@@ -1,5 +1,11 @@
 ## Changelog
 
+### v.0.0.5
+* Restored types to the bundle
+
+### v.0.0.4
+* Accidentally published the unbundled src instead of the bundle, corrected
+
 ### v.0.0.3
 * BUGFIX: Added RequestOptions argument type to createTaglessRequest definition
 
