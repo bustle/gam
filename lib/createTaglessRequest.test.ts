@@ -14,7 +14,7 @@ const creative = `
 function mockSuccess(parameters: Record<string, any>, options: RequestOptions) {
   nock("https://securepubads.g.doubleclick.net")
     .get("/gampad/adx")
-    .matchHeader('user-agent', options.userAgent)
+    .matchHeader('user-agent', options.headers['User-Agent'])
     .query(parameters)
     .reply(200, creative)
 }
@@ -29,8 +29,8 @@ describe("createTaglessRequest", () => {
         tile: 1,
       }
 
-      mockSuccess(parameters, {userAgent: 'myUserAgent'} )
-      const response = await createTaglessRequest(parameters, { userAgent: 'myUserAgent' })
+      mockSuccess(parameters, { headers: { 'User-Agent': 'myUserAgent' }} )
+      const response = await createTaglessRequest(parameters, { headers: { 'User-Agent': 'myUserAgent' }})
       assert.equal(response.status, 200)
       assert.isOk(await response.text())
     })
