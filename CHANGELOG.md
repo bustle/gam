@@ -1,5 +1,8 @@
 ## Changelog
 
+### v.0.0.8
+* Allow passing a complete map of request headers, not just user-agent
+
 ### v.0.0.7
 * Don't include the user-agent header at all if no userAgent option is provided
 
