@@ -1,5 +1,5 @@
 interface RequestOptions {
-  userAgent?: string
+  headers?: Record<string, string>
 }
 
 export default RequestOptions
