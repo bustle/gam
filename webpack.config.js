@@ -23,7 +23,7 @@ const common = {
     umdNamedDefine: true
   },
   resolve: {
-    extensions: ['.ts', '.d.ts']
+    extensions: ['.ts', '.d.ts', '.js']
   }
 }
 
