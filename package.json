@@ -1,6 +1,6 @@
 {
   "name": "@bustle/gam",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "scripts": {
     "build": "npx webpack",
     "eslint": "eslint --ext .ts,.js --cache .",
