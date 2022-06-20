@@ -15,7 +15,7 @@
 		exports["gam"] = factory();
 	else
 		root["gam"] = factory();
-})(this, function() {
+})(this, () => {
 return /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
@@ -26,7 +26,17 @@ return /******/ (() => { // webpackBootstrap
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createTaglessRequest\": () => (/* reexport safe */ _lib_createTaglessRequest__WEBPACK_IMPORTED_MODULE_1__.default)\n/* harmony export */ });\n/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! node-fetch */ \"./node_modules/node-fetch/browser.js\");\n/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(node_fetch__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _lib_createTaglessRequest__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lib/createTaglessRequest */ \"./lib/createTaglessRequest.ts\");\n\n\nif (!globalThis.fetch) {\n  globalThis.fetch = (node_fetch__WEBPACK_IMPORTED_MODULE_0___default());\n}\n\n\n\n//# sourceURL=webpack://gam/./index.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createTaglessRequest\": () => (/* reexport safe */ _lib_createTaglessRequest__WEBPACK_IMPORTED_MODULE_1__[\"default\"])\n/* harmony export */ });\n/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! node-fetch */ \"./node_modules/node-fetch/browser.js\");\n/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(node_fetch__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _lib_createTaglessRequest__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lib/createTaglessRequest */ \"./lib/createTaglessRequest.ts\");\n\n\nif (!globalThis.fetch) {\n  globalThis.fetch = (node_fetch__WEBPACK_IMPORTED_MODULE_0___default());\n}\n\n\n\n//# sourceURL=webpack://gam/./index.ts?");
+
+/***/ }),
+
+/***/ "./lib/createQueryString.ts":
+/*!**********************************!*\
+  !*** ./lib/createQueryString.ts ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ createQueryString)\n/* harmony export */ });\nfunction createQueryString(parameters) {\n  return Object.entries(parameters).filter((entry) => typeof entry[1] !== \"undefined\").map(([k, v]) => `${k}=${encodeURIComponent(typeof v === \"object\" ? createQueryString(v) : v)}`).join(\"&\");\n}\n\n\n//# sourceURL=webpack://gam/./lib/createQueryString.ts?");
 
 /***/ }),
 
@@ -36,17 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ \"./lib/utils.ts\");\n\nconst BASE_URL = \"https://securepubads.g.doubleclick.net/gampad/adx\";\nfunction createTaglessRequest(parameters) {\n  return fetch(`${BASE_URL}?${(0,_utils__WEBPACK_IMPORTED_MODULE_0__.createQueryString)(parameters)}`);\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createTaglessRequest);\n\n\n//# sourceURL=webpack://gam/./lib/createTaglessRequest.ts?");
-
-/***/ }),
-
-/***/ "./lib/utils.ts":
-/*!**********************!*\
-  !*** ./lib/utils.ts ***!
-  \**********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createQueryString\": () => (/* binding */ createQueryString)\n/* harmony export */ });\nfunction createQueryString(parameters) {\n  return Object.entries(parameters).map(([k, v]) => `${k}=${encodeURIComponent(v)}`).join(\"&\");\n}\n\n\n//# sourceURL=webpack://gam/./lib/utils.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _createQueryString__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createQueryString */ \"./lib/createQueryString.ts\");\n\nconst BASE_URL = \"https://securepubads.g.doubleclick.net/gampad/adx\";\nfunction createTaglessRequest(parameters, { headers } = {}) {\n  return fetch(`${BASE_URL}?${(0,_createQueryString__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(parameters)}`, { headers });\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createTaglessRequest);\n\n\n//# sourceURL=webpack://gam/./lib/createTaglessRequest.ts?");
 
 /***/ }),
 
@@ -56,7 +56,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \********************************************/
 /***/ ((module, exports) => {
 
-eval("\n\n// ref: https://github.com/tc39/proposal-global\nvar getGlobal = function () {\n\t// the only reliable means to get the global object is\n\t// `Function('return this')()`\n\t// However, this causes CSP violations in Chrome apps.\n\tif (typeof self !== 'undefined') { return self; }\n\tif (typeof window !== 'undefined') { return window; }\n\tif (typeof global !== 'undefined') { return global; }\n\tthrow new Error('unable to locate global object');\n}\n\nvar global = getGlobal();\n\nmodule.exports = exports = global.fetch;\n\n// Needed for TypeScript and Webpack.\nif (global.fetch) {\n\texports.default = global.fetch.bind(global);\n}\n\nexports.Headers = global.Headers;\nexports.Request = global.Request;\nexports.Response = global.Response;\n\n//# sourceURL=webpack://gam/./node_modules/node-fetch/browser.js?");
+eval("\n\n// ref: https://github.com/tc39/proposal-global\nvar getGlobal = function () {\n\t// the only reliable means to get the global object is\n\t// `Function('return this')()`\n\t// However, this causes CSP violations in Chrome apps.\n\tif (typeof self !== 'undefined') { return self; }\n\tif (typeof window !== 'undefined') { return window; }\n\tif (typeof global !== 'undefined') { return global; }\n\tthrow new Error('unable to locate global object');\n}\n\nvar global = getGlobal();\n\nmodule.exports = exports = global.fetch;\n\n// Needed for TypeScript and Webpack.\nif (global.fetch) {\n\texports[\"default\"] = global.fetch.bind(global);\n}\n\nexports.Headers = global.Headers;\nexports.Request = global.Request;\nexports.Response = global.Response;\n\n//# sourceURL=webpack://gam/./node_modules/node-fetch/browser.js?");
 
 /***/ })
 
