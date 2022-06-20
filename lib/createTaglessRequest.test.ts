@@ -29,8 +29,10 @@ describe("createTaglessRequest", () => {
         tile: 1,
       }
 
-      mockSuccess(parameters, { headers: { 'User-Agent': 'myUserAgent' }} )
-      const response = await createTaglessRequest(parameters, { headers: { 'User-Agent': 'myUserAgent' }})
+      mockSuccess(parameters, {headers: {'User-Agent': 'myUserAgent'}})
+      const response = await createTaglessRequest(parameters, {
+        headers: { 'User-Agent': 'myUserAgent' }
+      })
       assert.equal(response.status, 200)
       assert.isOk(await response.text())
     })

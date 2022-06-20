@@ -16,6 +16,7 @@ describe("createQueryString", () => {
   })
 
   it("drops undefined fields", () => {
+    /* eslint-disable-next-line no-undefined */
     const qs = createQueryString({ a: "b", c: undefined })
     assert.equal(qs, "a=b")
   })

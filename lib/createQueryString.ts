@@ -2,7 +2,7 @@ export default function createQueryString(
   parameters: Record<any, any>
 ): string {
   return Object.entries(parameters)
-    .filter(([k, v]) => v !== undefined)
+    .filter((entry) => typeof entry[1] !== 'undefined')
     .map(
       ([k, v]) =>
         `${k}=${encodeURIComponent(
